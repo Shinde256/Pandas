@@ -20,4 +20,3 @@ sp500.to_csv('sp500_ohlc.csv')
 df = pd.read_csv('sp500_ohlc.csv', index_col='Date', parse_dates=True)
 df.head()
 
-print 
