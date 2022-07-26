@@ -1,0 +1,25 @@
+#Create A DataFrame from dictionary
+import pandas as pd
+data = [{'name': 'vikash', 'age': 27}, {'name': 'Satyam', 'age': 14}]
+df = pd.DataFrame.from_dict(data, orient='columns')
+
+#If the Dictionary is nested you first need to normalize it
+from pandas.io.json import json_normalize
+data = [
+  {
+    'name': {
+      'first': 'vikash',
+      'last': 'singh'
+    },
+    'age': 27
+  },
+  {
+    'name': {
+      'first': 'satyam',
+      'last': 'singh'
+    },
+    'age': 14
+  }
+]
+df = pd.DataFrame.from_dict(json_normalize(data), orient='columns')
+#df
